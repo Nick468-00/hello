@@ -1,26 +1,19 @@
-pipeline {
-    agent any
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building the project'
-                sh 'mvn clean compile'
-            }
-        }
+    <modelVersion>4.0.0</modelVersion>
 
-        stage('Test') {
-            steps {
-                echo 'Running tests'
-                sh 'mvn test'
-            }
-        }
+    <groupId>com.example</groupId>
+    <artifactId>hello</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-        stage('Package') {
-            steps {
-                echo 'Packaging the project'
-                sh 'mvn package'
-            }
-        }
-    }
-}
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
